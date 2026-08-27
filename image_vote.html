@@ -90,16 +90,30 @@
   .bar-row .count { text-align: right; font-size: 13px; color: var(--text-dim); }
   .total { text-align: center; font-size: 12px; color: var(--text-dim); margin-top: 16px; }
   .refresh-note { text-align: center; font-size: 11px; color: var(--text-dim); margin-top: 8px; }
+  .past-colors { margin-bottom: 32px; text-align: center; }
+  .past-colors h2 { font-size: 16px; color: var(--text-dim); font-weight: 500; margin: 0 0 16px; }
+  .past-colors-img {
+    max-width: 100%;
+    border-radius: 10px;
+    border: 2px solid var(--panel-border);
+  }
+</style>
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <h1>好きな画像に投票しよう</h1>
-    <p>7枚の中から、いちばん好きな画像を1枚選んでください</p>
+    <h1>GPCI-2026 Summary Booklet 好きな表紙に投票しよう！</h1>
+    <p>7つの表紙案から、いちばん好きな案を1つ選んでください</p>
   </header>
 
   <div class="grid" id="grid"></div>
+
+  <div class="past-colors">
+    <h2>＜参考＞これまでの表紙色 ▼</h2>
+    <p>GPCI-2025 <-       -> GPCI-2019</p>
+    <img src="list.jpg" alt="これまでの表紙色" class="past-colors-img">
+  </div>
 
   <div class="actions">
     <button class="btn-primary" id="voteBtn" disabled>投票する</button>
@@ -121,16 +135,16 @@
  *    発行されるURL（.../exec で終わるもの）に置き換えてください
  * =================================================================== */
 const IMAGES = [
-  "https://picsum.photos/seed/vote1/500/500",
-  "https://picsum.photos/seed/vote2/500/500",
-  "https://picsum.photos/seed/vote3/500/500",
-  "https://picsum.photos/seed/vote4/500/500",
-  "https://picsum.photos/seed/vote5/500/500",
-  "https://picsum.photos/seed/vote6/500/500",
-  "https://picsum.photos/seed/vote7/500/500"
+  "1787813390455-9bb5129d-6894-44aa-8aac-0063222221c1_10.jpg",
+  "1787813390455-9bb5129d-6894-44aa-8aac-0063222221c1_12.jpg",
+  "1787813390455-9bb5129d-6894-44aa-8aac-0063222221c1_14.jpg",
+  "1787813390455-9bb5129d-6894-44aa-8aac-0063222221c1_2.jpg",
+  "1787813390455-9bb5129d-6894-44aa-8aac-0063222221c1_4.jpg",
+  "1787813390455-9bb5129d-6894-44aa-8aac-0063222221c1_6.jpg",
+  "1787813390455-9bb5129d-6894-44aa-8aac-0063222221c1_8.jpg"
 ];
 
-const API_URL = "ここにApps ScriptのウェブアプリURLを貼り付け"; // 例: https://script.google.com/macros/s/XXXXXXXX/exec
+const API_URL = "https://script.google.com/a/macros/mori.co.jp/s/AKfycbzncu54zU6Yp_0VBZ92KRsxJGNo4RSF6SSWoW472OlzeWZr1UA2K4_XRmyBS2MJW6w/exec"; // 例: https://script.google.com/macros/s/XXXXXXXX/exec
 
 const VOTER_ID_KEY = "image_vote_voter_id";
 const REFRESH_INTERVAL_MS = 5000;
